@@ -7,7 +7,6 @@ package com.prinstonsam.t.systems.interview.question01;
 
 /**
  *
- * @author natalia
  */
 public class A {
     public void print(){

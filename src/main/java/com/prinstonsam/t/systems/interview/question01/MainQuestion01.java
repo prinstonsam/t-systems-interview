@@ -6,9 +6,6 @@
 package com.prinstonsam.t.systems.interview.question01;
 
 /**
- *
- * @author natalia
- *
  * Что выведется на экран? Может есть ошибки и какие?
  */
 public class MainQuestion01 {
