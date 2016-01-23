@@ -18,23 +18,39 @@ public class MainClass {
         }
 
         StringBuilder sb = new StringBuilder("1");
+        System.out.print(revertString(sb));
+        System.out.println();
         for (int i = 2; i <=value; i++) {
-            for(int j = sb.length()-1; j>=0; j--){
-                System.out.print(sb.toString().charAt(j));
-            }
             sb.append("-"+i);
+            System.out.print(revertString(sb));
             System.out.println();
         }
+    }
 
-        for(int j = sb.length()-1; j>=0; j--){
-            System.out.print(sb.toString().charAt(j));
+    private static String revertString(StringBuilder sb) {
+        if( sb.length() == 1){
+            return sb.toString();
         }
+        StringBuilder outStr = new StringBuilder();
+        int i = sb.length()-1;
+        StringBuilder tmp = new StringBuilder();
+        do {
+            if(sb.toString().charAt(i)!='-'){
+                tmp.append(sb.toString().charAt(i));
+            }
+            else{
+                outStr.append(tmp.reverse().toString()).append('-');
+                tmp = new StringBuilder();
+            }
+            i--;
 
+        }while(i>0);
+
+        outStr.append("1");
+        return outStr.toString();
     }
 
     public static void main(String[] args) {
-
-        printRequiredString(6);
-
+        printRequiredString(12);
     }
 }
